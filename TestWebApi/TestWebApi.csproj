@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Новая папка1\**" />
+    <Content Remove="Новая папка1\**" />
+    <EmbeddedResource Remove="Новая папка1\**" />
+    <None Remove="Новая папка1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190620083847_Oleg5.cs" />
+    <Compile Remove="Migrations\20190620083847_Oleg5.Designer.cs" />
+    <Compile Remove="Migrations\20190620084039_help.cs" />
+    <Compile Remove="Migrations\20190620084039_help.Designer.cs" />
+    <Compile Remove="Migrations\20190620085422_New.cs" />
+    <Compile Remove="Migrations\20190620085422_New.Designer.cs" />
+    <Compile Remove="Migrations\20190620102217_New.cs" />
+    <Compile Remove="Migrations\20190620102217_New.Designer.cs" />
+    <Compile Remove="Migrations\20190620102427_New.cs" />
+    <Compile Remove="Migrations\20190620102427_New.Designer.cs" />
+    <Compile Remove="Migrations\20190620104302_asd.cs" />
+    <Compile Remove="Migrations\20190620104302_asd.Designer.cs" />
+    <Compile Remove="Migrations\20190620104538_Execute.cs" />
+    <Compile Remove="Migrations\20190620104538_Execute.Designer.cs" />
+    <Compile Remove="Migrations\20190620104739_User.cs" />
+    <Compile Remove="Migrations\20190620104739_User.Designer.cs" />
+    <Compile Remove="Migrations\20190620104801_UserLocation.cs" />
+    <Compile Remove="Migrations\20190620104801_UserLocation.Designer.cs" />
+    <Compile Remove="Migrations\20190620105913_AddAge.cs" />
+    <Compile Remove="Migrations\20190620105913_AddAge.Designer.cs" />
+    <Compile Remove="Migrations\20190620110213_AddAge.cs" />
+    <Compile Remove="Migrations\20190620110213_AddAge.Designer.cs" />
+    <Compile Remove="Migrations\20190620110818_AddAge.cs" />
+    <Compile Remove="Migrations\20190620110818_AddAge.Designer.cs" />
+    <Compile Remove="Migrations\20190620111239_AddAge1.cs" />
+    <Compile Remove="Migrations\20190620111239_AddAge1.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+</Project>

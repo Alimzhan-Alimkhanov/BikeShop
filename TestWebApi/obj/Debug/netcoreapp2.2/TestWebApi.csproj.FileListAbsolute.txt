@@ -1,0 +1,16 @@
+C:\Projects_.Net\TestWebApi\TestWebApi\bin\Debug\netcoreapp2.2\TestWebApi.deps.json
+C:\Projects_.Net\TestWebApi\TestWebApi\bin\Debug\netcoreapp2.2\TestWebApi.runtimeconfig.json
+C:\Projects_.Net\TestWebApi\TestWebApi\bin\Debug\netcoreapp2.2\TestWebApi.runtimeconfig.dev.json
+C:\Projects_.Net\TestWebApi\TestWebApi\bin\Debug\netcoreapp2.2\TestWebApi.dll
+C:\Projects_.Net\TestWebApi\TestWebApi\bin\Debug\netcoreapp2.2\TestWebApi.pdb
+C:\Projects_.Net\TestWebApi\TestWebApi\bin\Debug\netcoreapp2.2\TestWebApi.Views.dll
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.csprojAssemblyReference.cache
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.csproj.CoreCompileInputs.cache
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.RazorAssemblyInfo.cache
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.RazorAssemblyInfo.cs
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.AssemblyInfoInputs.cache
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.AssemblyInfo.cs
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.RazorTargetAssemblyInfo.cache
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.dll
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.pdb
+C:\Projects_.Net\TestWebApi\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.csproj.CopyComplete

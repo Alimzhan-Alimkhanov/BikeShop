@@ -1,0 +1,11 @@
+<ul>
+<li *ngFor="let cycle of cycles; let i = index">
+  <span>
+    <input type="checkbox" [checked]="cycle.exist" (change)="onChange(cycle.id)">
+  <strong>{{i+1}}</strong>{{cycle.model}}
+  </span>
+
+  <small>{{cycle.date|date:'medium'}}</small>
+  <button class="rm">&times;</button>
+</li>
+</ul>

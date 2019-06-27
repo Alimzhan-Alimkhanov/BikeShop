@@ -1,0 +1,35 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "launchurl": "api/home",
+    "iisExpress": {
+      "applicationUrl": "http://localhost:56906",
+      "sslPort": 44369
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": false,
+      "launchurl": "api/home",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "TestWebApi": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    }
+  }
+}
+
+//Prodoction
+//режим выпуска в котором при ошибке отпр-я пустоё ответ 
+
+
+
