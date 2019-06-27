@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects_.Net\\TestWebApi\\TestWebApi\\TestWebApi.csproj": {}
+    "C:\\Project_.net\\BikeShop\\TestWebApi\\TestWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Projects_.Net\\TestWebApi\\TestWebApi\\TestWebApi.csproj": {
+    "C:\\Project_.net\\BikeShop\\TestWebApi\\TestWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects_.Net\\TestWebApi\\TestWebApi\\TestWebApi.csproj",
+        "projectUniqueName": "C:\\Project_.net\\BikeShop\\TestWebApi\\TestWebApi.csproj",
         "projectName": "TestWebApi",
-        "projectPath": "C:\\Projects_.Net\\TestWebApi\\TestWebApi\\TestWebApi.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects_.Net\\TestWebApi\\TestWebApi\\obj\\",
+        "projectPath": "C:\\Project_.net\\BikeShop\\TestWebApi\\TestWebApi.csproj",
+        "packagesPath": "C:\\Users\\Mark-1\\.nuget\\packages\\",
+        "outputPath": "C:\\Project_.net\\BikeShop\\TestWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mark-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
