@@ -42,7 +42,7 @@ namespace TestWebApi.Controllers
 
             if (ControllerContext.HttpContext.Request.Headers.TryGetValue("Authorization",out token))
             {
-                Debug.WriteLine("TOKEN: " + token);        
+                Debug.WriteLine("TOKENNN: " + token);        
             }
 
         
@@ -81,7 +81,7 @@ namespace TestWebApi.Controllers
         [HttpGet("data")]
         public IEnumerable<User> data()
         {
-            return "TEXT";
+            return "new Text";
         }
 
 
