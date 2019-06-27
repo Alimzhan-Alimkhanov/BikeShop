@@ -81,7 +81,7 @@ namespace TestWebApi.Controllers
         [HttpGet("data")]
         public IEnumerable<User> data()
         {
-            return null;
+            return "TEXT";
         }
 
 
