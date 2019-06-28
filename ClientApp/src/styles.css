@@ -1,3 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
+
+
+.navbar-default {
+    background-color: #000000;
+    border-color: #E7E7E7;
+}

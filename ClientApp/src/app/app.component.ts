@@ -1,28 +1,32 @@
 import { Component } from '@angular/core';
-
-export interface Cycle {
-  id: number
-  model: string
-  exist: boolean
-  date?: any
-}
-
+import { Main_serviceService } from './main_service.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl:'./app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+//export - 
 export class AppComponent {
-  appTitle = 'BikeShop';
+    
+    username: string =""
+    responce: any
 
+    constructor(private http: HttpClient)
+    {
 
-  public cycles: Cycle[] =
-    [
-      { id: 0, model: "Honda Cbr", exist: true,date: new Date() },
-      { id: 1, model: "Harley", exist: false, date: new Date() },
-      { id: 2, model: "Yamaha", exist: true, date: new Date() },
-    ]
+    }
+
+    search(){
+      this.http.get('https://localhost:5001/api/home/' + this.username).subscribe((responce)=>
+      {
+        this.responce = responce,
+        console.log(this.responce)
+      })
+    }
+    
 }
 
 //интерполяция

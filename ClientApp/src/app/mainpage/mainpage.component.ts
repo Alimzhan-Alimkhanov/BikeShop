@@ -1,25 +1,35 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Cycle } from '../app.component';
 
 @Component({
   selector: 'app-mainpage',
-  templateUrl: './mainpage.component.html',
-  styleUrls: ['./mainpage.component.css']
+  template: `<h3>Главная</h3>`
 })
 export class MainpageComponent implements OnInit {
 
+    
+  message: string;
 
-  @Input() cycles: Cycle[] = []
+  items = ["ITEm1","Item2","Item3"]
 
 
-  constructor() { }
+  logged = false
+
+   text: string = "Hellooo"
+ 
+  
+  Loggin(event){
+    console.log(event)    
+   }
+
+
+
+  constructor() {
+   }
+
+
 
   ngOnInit() {
   }
 
-  onChange(id: number)
-  {
-      
-  }
 
-}   
+}

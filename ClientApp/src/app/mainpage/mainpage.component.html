@@ -1,11 +1,21 @@
-<ul>
-<li *ngFor="let cycle of cycles; let i = index">
-  <span>
-    <input type="checkbox" [checked]="cycle.exist" (change)="onChange(cycle.id)">
-  <strong>{{i+1}}</strong>{{cycle.model}}
-  </span>
+<h1>Message</h1> 
 
-  <small>{{cycle.date|date:'medium'}}</small>
-  <button class="rm">&times;</button>
-</li>
-</ul>
+<!-- <p *ngFor="let item of items; let i = index">{{i}}:{{item}}</p> -->
+
+<!-- <div class="list-group">
+    <a *ngFor="let item of items; let i = index" href="#" class="list-group-item">{{i}}: {{item}}</a>
+  </div>
+
+
+  <p *ngIf="logged else loggedOut">PAssword</p>
+
+<ng-template #loggedOut>
+   <p>Not Acces</p>
+</ng-template>
+
+
+<button (click)="Loggin($event)">Event</button> -->
+
+
+<input type="text" [(ngModel)]="text">
+<h2>{{text}}</h2>
