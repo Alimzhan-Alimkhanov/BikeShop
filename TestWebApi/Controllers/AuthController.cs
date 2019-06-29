@@ -60,7 +60,7 @@ namespace TestWebApi.Controllers
         public async Task<IActionResult> Login(UserLogin userlogin)
         {   
 
-            throw new Exception("No Boy!");
+          
 
             var user = await _repo.Login(userlogin.username,userlogin.password);
 

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {Routes,RouterModule} from '@angular/router'
-import { Main_serviceService } from './main_service.service';
 
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
@@ -15,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { AlertifyService } from './_services/alertify.service';
+
 
 
 
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
       NewsComponent,
       NotComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
    ],
    imports: [
       BrowserModule,
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
    ],
    providers: [
       AuthService,
-      ErrorInterceptorProvider
+      ErrorInterceptorProvider,
+      AlertifyService
    ],
    bootstrap: [
       AppComponent
