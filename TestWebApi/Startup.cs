@@ -108,7 +108,7 @@ namespace TestWebApi
                             // error.Error.StackTrace - место ошибки
 
                             context.Response.AddApplicationError(error.Error.Message);
-                            await context.Response.WriteAsync(error.Error.Message + " " + error.Error.Source);
+                            await context.Response.WriteAsync(error.Error.Message);
                         }
                     });
                 });

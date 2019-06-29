@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { AuthservicesService } from '../_services/authservices.service';
 import { AuthService } from '../_services/auth.service';
 
@@ -23,12 +23,13 @@ export class NavComponent implements OnInit {
         console.log('Logged in succes');
       },error =>
       {
-        console.log('Logged in NotSucces');  
+        console.log(error);  
       })
   }
 
   loggedIn()
  {
+  // console.log("loggedIn work")
    const token = localStorage.getItem('token');
     return !!token; 
     //exsict - true , нету- false 
