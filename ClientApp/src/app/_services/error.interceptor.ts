@@ -11,9 +11,16 @@ export class ErrorInterceptor implements HttpInterceptor{
             catchError(error => {
                 if(error instanceof HttpErrorResponse)
                 {
+                    if(error.status == 0)
+                    {
+                        console.log(error.statusText);
+                        return throwError("Сервер не отвечает");
+                    }
+
                     if(error.status == 401)
                     {
-                        return throwError(error.statusText);
+                        console.log(error.statusText);
+                        return throwError("Проверьте Login или Password");
                     }
                 
                     const applicationError = error.headers.get("Application-Error");

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import {map} from 'rxjs/operators'
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 //функия (декортарто) который добавляет настройки для классса
 //без Inhectable сервис не будеть доступен 
@@ -11,6 +12,8 @@ import {map} from 'rxjs/operators'
 export class AuthService {
  
   baseUrl = environment.apiUrl + 'auth/'
+  jwtHelper = new JwtHelperService();
+  decodeToken: any;
 
 constructor(private http: HttpClient) { }
 
@@ -23,6 +26,8 @@ constructor(private http: HttpClient) { }
           if(responseUser)
           {
             localStorage.setItem('token',responseUser.token);
+            //this.decodeToken = this.jwtHelper.decodeToken(responseUser.token);
+            console.log(this.decodeToken);
           }
       })
     );
@@ -31,8 +36,18 @@ constructor(private http: HttpClient) { }
 
  register(model: any)
  {
-    return this.http.post(this.baseUrl + "register",model   )
+    return this.http.post(this.baseUrl + "register",model)
  }
+ 
+ loggedIn()
+ {
+   const token = localStorage.getItem('token');
+   
+   //true - токен не рабочий , время истекло
+   //false - токен рабочий , время не истекло
+   return !this.jwtHelper.isTokenExpired(token);
+ }
+
 
 
 }

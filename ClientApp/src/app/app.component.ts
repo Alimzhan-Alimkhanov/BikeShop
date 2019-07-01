@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { Main_serviceService } from './main_service.service';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { AuthService } from './_services/auth.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-root',
@@ -9,23 +10,30 @@ import {HttpClient} from '@angular/common/http';
 })
 
 //export - 
-export class AppComponent {
+export class AppComponent implements OnInit {
     
-    username: string =""
-    responce: any
+    
+    jwtHelper = new JwtHelperService();
 
-    constructor(private http: HttpClient)
+    constructor(private authsService: AuthService)
     {
 
     }
 
-    search(){
-      this.http.get('https://localhost:5001/api/home/' + this.username).subscribe((responce)=>
-      {
-        this.responce = responce,
-        console.log(this.responce)
-      })
+
+    ngOnInit(){
+    
+      const token = localStorage.getItem('token');
+      if(token){
+         this.authsService.decodeToken = this.jwtHelper.decodeToken(token);
+      }
     }
+
+  
+
+    
+
+
     
 }
 

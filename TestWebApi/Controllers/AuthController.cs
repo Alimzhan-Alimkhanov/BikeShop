@@ -60,8 +60,6 @@ namespace TestWebApi.Controllers
         public async Task<IActionResult> Login(UserLogin userlogin)
         {   
 
-          
-
             var user = await _repo.Login(userlogin.username,userlogin.password);
 
             if (user == null)
@@ -70,7 +68,7 @@ namespace TestWebApi.Controllers
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
-                new Claim(ClaimTypes.Name,user.Name)
+                new Claim(ClaimTypes.Name,user.Name);
             };
 
 
@@ -80,7 +78,8 @@ namespace TestWebApi.Controllers
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddMilliseconds(100),
+                //токен на день
+                Expires = DateTime.Now.AddDays(1),
                 SigningCredentials = credits
             };
 
