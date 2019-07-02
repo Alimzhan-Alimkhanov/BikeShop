@@ -78,10 +78,18 @@ namespace TestWebApi.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("data")]
+        [HttpGet("users")]
         public IEnumerable<User> data()
         {
             return _dbcontext.Users;
+        }
+
+        [AllowAnonymous]
+        [HttpGet("adverts")]
+        public IEnumerable<Advert> adverts()
+        {
+
+            return _dbcontext.Adverts;
         }
 
 

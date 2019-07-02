@@ -19,6 +19,25 @@ namespace TestWebApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("TestWebApi.Models.Advert", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Organization");
+
+                    b.Property<string>("Type");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Adverts");
+                });
+
             modelBuilder.Entity("TestWebApi.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -27,7 +46,11 @@ namespace TestWebApi.Migrations
 
                     b.Property<int>("Age");
 
+                    b.Property<DateTime>("Created");
+
                     b.Property<string>("Gender");
+
+                    b.Property<DateTime>("LastActive");
 
                     b.Property<string>("Name");
 
@@ -40,6 +63,14 @@ namespace TestWebApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("TestWebApi.Models.Advert", b =>
+                {
+                    b.HasOne("TestWebApi.Models.User", "User")
+                        .WithMany("Adverts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

@@ -3,8 +3,9 @@
     "",
     "\\Controllers",
     "\\Data",
-    "\\Helpers"
+    "\\Helpers",
+    "\\Models"
   ],
-  "SelectedNode": "\\Controllers\\AuthController.cs",
+  "SelectedNode": "\\TestWebApi.csproj",
   "PreviewInSolutionExplorer": false
 }

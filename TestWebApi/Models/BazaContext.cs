@@ -14,5 +14,7 @@ namespace TestWebApi.Models
         }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Advert> Adverts  { get; set; }
     }
 }
