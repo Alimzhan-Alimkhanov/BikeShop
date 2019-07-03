@@ -39,6 +39,8 @@
     <Compile Remove="Migrations\20190620110818_AddAge.Designer.cs" />
     <Compile Remove="Migrations\20190620111239_AddAge1.cs" />
     <Compile Remove="Migrations\20190620111239_AddAge1.Designer.cs" />
+    <Compile Remove="Migrations\20190703092950_Create_Tables.cs" />
+    <Compile Remove="Migrations\20190703092950_Create_Tables.Designer.cs" />
   </ItemGroup>
 
 
@@ -54,7 +56,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
     <Folder Include="Views\" />
   </ItemGroup>
 

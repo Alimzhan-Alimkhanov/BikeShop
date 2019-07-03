@@ -86,10 +86,11 @@ namespace TestWebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet("adverts")]
-        public IEnumerable<Advert> adverts()
+        public User adverts()
         {
+            var user = _dbcontext.Users.FirstOrDefault();
 
-            return _dbcontext.Adverts;
+            return user;
         }
 
 

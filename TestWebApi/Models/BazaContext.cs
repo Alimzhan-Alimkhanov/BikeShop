@@ -12,9 +12,27 @@ namespace TestWebApi.Models
         {
 
         }
-
         public DbSet<User> Users { get; set; }
 
-        public DbSet<Advert> Adverts  { get; set; }
+        public DbSet<Bike> Bikes { get; set; }
+
+
+        public DbSet<Bike_Photo> Bike_Photos  { get; set; }
+
+        public DbSet<City> Cities  { get; set; }
+
+        public DbSet<Country> Countries   { get; set; }
+
+        public DbSet<Engine_Capacity> Engine_Capacities  { get; set; }
+
+        public DbSet<Kind> Kinds { get; set; }
+
+        public DbSet<Manufacture> Manufactures  { get; set; }
+
+       
+
+        
+
+
     }
 }

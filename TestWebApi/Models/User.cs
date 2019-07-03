@@ -23,11 +23,17 @@ namespace TestWebApi.Models
 
         public int Age { get; set; }
 
-        public string telephone_number { get; set; }
 
-        public List<Advert> Adverts { get; set; }
+        public string  Telephone_number { get; set; }
 
+
+        public List<Bike> User_List_Bike { get; set; }
+
+ 
 
       
+
+
+
     }
 }
