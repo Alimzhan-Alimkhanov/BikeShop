@@ -17,21 +17,28 @@ namespace TestWebApi.Models
 
         public DateTime Push_time { get; set; }
 
+
+        public int Cost { get; set; }
+
         public int Count { get; set; }
 
         public string Decription { get; set; }
 
-        public int Contact_Phone { get; set; }
+        public string Contact_Phone { get; set; }
 
 
         public int Count_Show { get; set; }
 
+        public string Title_Paht { get; set; }
 
         
         public List<Bike_Photo> Photos { get; set; }
 
         public int CountryId { get; set; }
         public Country Country { get; set; }
+
+        public int CityId { get; set; }
+        public City City { get; set; }
 
         public int Engine_CapacityId { get; set; }
         public Engine_Capacity Engine_Capacity { get; set; }
@@ -44,6 +51,8 @@ namespace TestWebApi.Models
 
         public int UserId { get; set; }
         public User User { get; set; }
+
+
 
 
 

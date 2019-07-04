@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestWebApi.Models;
 
 namespace TestWebApi.Migrations
 {
     [DbContext(typeof(BAZAContext))]
-    partial class BAZAContextModelSnapshot : ModelSnapshot
+    [Migration("20190704043634_NTable")]
+    partial class NTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,11 +27,9 @@ namespace TestWebApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CityId");
+                    b.Property<int?>("CityId");
 
-                    b.Property<string>("Contact_Phone");
-
-                    b.Property<int>("Cost");
+                    b.Property<int>("Contact_Phone");
 
                     b.Property<int>("Count");
 
@@ -52,8 +52,6 @@ namespace TestWebApi.Migrations
                     b.Property<int>("Release_year");
 
                     b.Property<string>("Title");
-
-                    b.Property<string>("Title_Paht");
 
                     b.Property<int>("UserId");
 
@@ -204,15 +202,14 @@ namespace TestWebApi.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("User_Photos");
+                    b.ToTable("User_Photo");
                 });
 
             modelBuilder.Entity("TestWebApi.Models.Bike", b =>
                 {
-                    b.HasOne("TestWebApi.Models.City", "City")
+                    b.HasOne("TestWebApi.Models.City")
                         .WithMany("List_Bike")
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CityId");
 
                     b.HasOne("TestWebApi.Models.Country", "Country")
                         .WithMany("List_Bike")

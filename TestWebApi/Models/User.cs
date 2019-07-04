@@ -27,6 +27,9 @@ namespace TestWebApi.Models
         public string  Telephone_number { get; set; }
 
 
+        public User_Photo User_Photo { get; set; }
+
+
         public List<Bike> User_List_Bike { get; set; }
 
  

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestWebApi.Models;
 
 namespace TestWebApi.Migrations
 {
     [DbContext(typeof(BAZAContext))]
-    partial class BAZAContextModelSnapshot : ModelSnapshot
+    [Migration("20190704061107_AddTitlePath")]
+    partial class AddTitlePath
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,8 +30,6 @@ namespace TestWebApi.Migrations
                     b.Property<int>("CityId");
 
                     b.Property<string>("Contact_Phone");
-
-                    b.Property<int>("Cost");
 
                     b.Property<int>("Count");
 

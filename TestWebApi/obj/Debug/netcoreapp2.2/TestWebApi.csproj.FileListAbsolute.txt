@@ -30,7 +30,6 @@ C:\Project_.net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.RazorTarg
 C:\Project_.net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.dll
 C:\Project_.net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.pdb
 C:\Project_.net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.csproj.CopyComplete
-C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.csprojAssemblyReference.cache
 C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.csproj.CoreCompileInputs.cache
 C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.RazorAssemblyInfo.cache
 C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.RazorAssemblyInfo.cs
@@ -46,3 +45,4 @@ C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.RazorTar
 C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.dll
 C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.pdb
 C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.csproj.CopyComplete
+C:\Projects_.Net\BikeShop\TestWebApi\obj\Debug\netcoreapp2.2\TestWebApi.csprojAssemblyReference.cache

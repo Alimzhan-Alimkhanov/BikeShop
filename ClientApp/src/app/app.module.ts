@@ -6,10 +6,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import {Routes,RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { MainpageComponent } from './mainpage/mainpage.component';
 import { NavComponent } from './nav/nav.component';
-import { AboutComponent } from './about/about.component';
-import { NewsComponent } from './news/news.component';
 import { NotComponent } from './Not/Not.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -21,22 +18,21 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
+import { BikeListComponent } from './bike-list/bike-list.component';
 
 
 
 @NgModule({
    declarations: [
       AppComponent,
-      MainpageComponent,
       NavComponent,
-      AboutComponent,
-      NewsComponent,
       NotComponent,
       HomeComponent,
       RegisterComponent,
       MemberListComponent,
       ListsComponent,
-      MessagesComponent
+      MessagesComponent,
+      BikeListComponent
    ],
    imports: [
       BrowserModule,
