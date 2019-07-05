@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators'
 import { environment } from 'src/environments/environment';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { Bike } from '../_model/Bike';
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +11,20 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 export class BikeService {
 
   baseUrl = environment.apiUrl + 'bike/GetBike';
+  bike_mans_url = environment.apiUrl + 'bike/GetManBike/';
 
   constructor(private http: HttpClient) { }
 
 
-  BikeList: any;
-
-
   getBikeList()
   {
-    this.http.get(this.baseUrl).subscribe(responce=>{
-      this.BikeList = responce;
-     // console.log(
-    },error =>{
-      console.log()error
-    });
+    return this.http.get(this.baseUrl);
+  }
 
-    return this.BikeList;
+  getBikeManList(man: string)
+  {
+    console.log(this.bike_mans_url+man);
+    return this.http.get(this.bike_mans_url+man);
   }
 
 }

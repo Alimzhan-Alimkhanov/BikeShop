@@ -19,6 +19,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { BikeListComponent } from './bike-list/bike-list.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 
 
@@ -32,7 +34,8 @@ import { BikeListComponent } from './bike-list/bike-list.component';
       MemberListComponent,
       ListsComponent,
       MessagesComponent,
-      BikeListComponent
+      BikeListComponent,
+      FooterComponent
    ],
    imports: [
       BrowserModule,

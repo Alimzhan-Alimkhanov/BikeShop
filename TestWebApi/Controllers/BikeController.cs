@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using TestWebApi.Models;
 
 namespace TestWebApi.Controllers
@@ -37,18 +38,32 @@ namespace TestWebApi.Controllers
             {
                 return BadRequest("Table Bikes Empty");
             }
+
             return Ok(_dbcontext.Bikes);
         }
 
         [AllowAnonymous]
         [HttpGet("GetManBike/{name}")]
-        public async Task<JsonResult> GetManBike(string name)
+        public async Task<IActionResult> GetManBike(string name)
         {
-            var bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).Where(p => p.Name == name);           
 
-            
+            // List<Manufacture> bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).Where(p => p.Name == name);
 
-            return new JsonResult(bikes);
+            //var bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).Where(p => p.Name == name);
+
+            //   var bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).FirstOrDefault();
+
+
+            //List<> list = _dbcontext.Bikes.ToList();
+
+            // var json = JsonConvert.SerializeObject(bikes.ToArray());
+
+            //Manufacture mans = _dbcontext.Manufactures.FirstOrDefault();
+            //_dbcontext.Bikes.Where(p => p.ManufactureID == mans.Id).Load();
+
+           
+
+            return Ok(mans);
         }
 
 

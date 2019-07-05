@@ -1,10 +1,50 @@
 
-<div>
+<!-- <div>
     <ul>
         <li *ngFor="let item of BikeList" >
-            {{item.id}}
-        </li>
+            {{item.name_Model}}
+        </li> -->
 
         <!-- <li>{{BikeList.name}}</li> -->
-    </ul>    
-</div>
+    <!-- </ul>    
+</div> -->
+<div class="container">
+
+       
+        <ul class="list-group list-group-horizontal justify-content-center"style="padding: 25px;">
+            <li class="list-group-item"><a href="" onclick="return false"  (click)="selectionManufacture(bike_man_array[0])" id="custom_link">{{bike_man_array[0]}}</a></li> <!--action-->
+            <li class="list-group-item"><a  href="" id="custom_link">{{bike_man_array[1]}}</a></li>
+            <li class="list-group-item"><a  href="#" id="custom_link">{{bike_man_array[2]}}</a></li>
+          
+          </ul>
+
+
+<div class="col-lg-offset">
+
+
+    <div class="row">
+
+      <div *ngFor="let item of BikeList" (click)="onSelected(item)" class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" id="cusom_bike_img" src="https://localhost:5001/{{item.title_Paht}}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">{{item.title}}</a>    
+            </h4>
+            <h6>{{item.name_Model}}</h6>
+            <h5>{{item.cost}}т</h5>
+            <p class="card-text"></p>
+          </div>
+        </div>  
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.col-lg-offset -->
+
+  </div>
+  
+
+  <!-- <app-footer></app-footer> -->
