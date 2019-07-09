@@ -46,24 +46,16 @@ namespace TestWebApi.Controllers
         [HttpGet("GetManBike/{name}")]
         public async Task<IActionResult> GetManBike(string name)
         {
+            var bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).Where(p => p.Name == name);
 
-            // List<Manufacture> bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).Where(p => p.Name == name);
+       
 
-            //var bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).Where(p => p.Name == name);
+            var bs = (from bike in _dbcontext.Bikes
+                      where bike.Manufacture.Name == name
+                      select bike).ToList();
 
-            //   var bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).FirstOrDefault();
 
-
-            //List<> list = _dbcontext.Bikes.ToList();
-
-            // var json = JsonConvert.SerializeObject(bikes.ToArray());
-
-            //Manufacture mans = _dbcontext.Manufactures.FirstOrDefault();
-            //_dbcontext.Bikes.Where(p => p.ManufactureID == mans.Id).Load();
-
-           
-
-            return Ok(mans);
+            return Ok(bs);
         }
 
 

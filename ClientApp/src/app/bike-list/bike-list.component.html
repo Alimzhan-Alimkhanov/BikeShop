@@ -1,22 +1,120 @@
-
-<!-- <div>
-    <ul>
-        <li *ngFor="let item of BikeList" >
-            {{item.name_Model}}
-        </li> -->
-
-        <!-- <li>{{BikeList.name}}</li> -->
-    <!-- </ul>    
-</div> -->
 <div class="container">
 
+    <div class="container" style="padding: 20px;">
+        <div class="row searchFilter" >
+           <div class="col-sm-12" >
+            <div class="input-group" >
+             <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="Что ищем?" >
+             <div class="pl-2 input-group-btn" >
+              <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon" ><i class="fa fa-search fa-fw"></i>Найти</span></button>
+             </div>
+            </div>
+           </div>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <div class="pl-4 row">
+
+          <div class="dropdown" dropdown>
+            <label class="pr-2">Город:</label>
+              <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
+                {{ cities_array[selected_city_index]}}
+              </button>
+              <div class="dropdown-menu" *dropdownMenu>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_city(0)">{{ cities_array[0]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_city(1)">{{ cities_array[1]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_city(2)">{{ cities_array[2]}}</a>
+              </div>
+            </div>
+
+            <div class="pl-3 dropdown" dropdown>
+                <label class="pr-2">Страна производителя:</label>
+              <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
+                {{ country_array[selected_country_index]}}
+              </button>
+              <div class="dropdown-menu" *dropdownMenu>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(0)">{{ country_array[0]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(1)">{{ country_array[1]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(2)">{{ country_array[2]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(3)">{{ country_array[3]}}</a>
+              </div>
+            </div>
+
+            <div class="pl-3 dropdown" dropdown>
+                <label class="pr-2">Тип:</label>
+              <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
+                {{ country_array[selected_country_index]}}
+              </button>
+              <div class="dropdown-menu" *dropdownMenu>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(0)">{{ country_array[0]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(1)">{{ country_array[1]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(2)">{{ country_array[2]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(3)">{{ country_array[3]}}</a>
+              </div>
+            </div>
+
+
+            <div class="pl-3 dropdown" dropdown>
+                <label class="pr-2">Объем двигеталя:</label>
+              <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
+                {{ country_array[selected_country_index]}}
+              </button>
+              <div class="dropdown-menu" *dropdownMenu>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(0)">{{ country_array[0]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(1)">{{ country_array[1]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(2)">{{ country_array[2]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(3)">{{ country_array[3]}}</a>
+              </div>
+            </div>
+
+            <div class="pl-3 dropdown" dropdown>
+                <label class="pr-2">Производитель:</label>
+              <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
+                {{ country_array[selected_country_index]}}
+              </button>
+              <div class="dropdown-menu" *dropdownMenu>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(0)">{{ country_array[0]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(1)">{{ country_array[1]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(2)">{{ country_array[2]}}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(3)">{{ country_array[3]}}</a>
+              </div>
+            </div>
+         
+          </div>
+
+      </div>
+
+      
+
+
        
-        <ul class="list-group list-group-horizontal justify-content-center"style="padding: 25px;">
-            <li class="list-group-item"><a href="" onclick="return false"  (click)="selectionManufacture(bike_man_array[0])" id="custom_link">{{bike_man_array[0]}}</a></li> <!--action-->
-            <li class="list-group-item"><a  href="" id="custom_link">{{bike_man_array[1]}}</a></li>
-            <li class="list-group-item"><a  href="#" id="custom_link">{{bike_man_array[2]}}</a></li>
-          
+      
+
+      
+          <ul class="pt-4 pb-4 list-group list-group-horizontal justify-content-center">
+            <li class="list-group-item" [ngClass]="{'active':ActiveItem(0)}" (click)="selectionManufacture(0)"><a  href="" onclick="return false"  id="custom_link">{{bike_man_array[0]}}</a></li> 
+            <li class="list-group-item" [ngClass]="{'active':ActiveItem(1)}" (click)="selectionManufacture(1)"><a  href="" onclick="return false"   id="custom_link">{{bike_man_array[1]}}</a></li>
+            <li class="list-group-item" [ngClass]="{'active':ActiveItem(2)}" (click)="selectionManufacture(2)"><a  href="" onclick="return false"  id="custom_link">{{bike_man_array[2]}}</a></li>
           </ul>
+
+        
+     
 
 
 <div class="col-lg-offset">

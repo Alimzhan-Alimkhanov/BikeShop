@@ -17,22 +17,82 @@ export class BikeListComponent implements OnInit {
 
 
    BikeList : Bike;
+   selected_item: number = 0;
+   selected_city_index = 0;
+   selected_country_index = 0;
+   selected_type_index = 0;
+   selected_capacity_index = 0;
+   selected_manufacture_index = 0;
   
    bike_man_array = [
      "BMW",
      "Harley-Davidson",
      "Kawasaki"
    ];
+
+   cities_array = [
+     "Все",
+    "Астана",
+    "Алматы"
+   ];
+
+   country_array = [
+    "Любой",
+   "Германия",
+   "Сша",
+   "Китай"
+  ];
+
+  type_array = [
+    "Любой",
+   "Классика",
+   "СпортБайк",
+   "Круизер",
+   "Чоппер"
+  ];
+
+
+  capacity_array = [
+    "Любой",
+   "от 50",
+   "от 72-110",
+   "от 125",
+   "от 150-200",
+   "от 250",
+   "от 300",
+   "от 350",
+   "от 400",
+   "от 450",
+   "от 500",
+   "от 550",
+   "от 600",
+   "от 650",
+   "от 700",
+   "от 750",
+   "от 800",
+   "от 850",
+   "от 900",
+   "от 950",
+   "от 1000",
+   "от 1050",
+   "от 1100",
+   "от 1150",
+   "от 1200",
+   "от 1200+"
+  ];
+
+
+  manufaсture_array = [
+    "Любой", 
+    "BMW",
+     "Harley-Davidson",
+     "Kawasaki"
+  ];
     
 
 
   ngOnInit() {
-    // this.bike_service.getBikeList().subscribe((responce:Bike)=>{
-    //     this.BikeList = responce;
-    //  },error =>{
-    //     this.alertify.error("Сервер не отвечаеть (Не можеть получить список мото-в)");
-    //  });
-     this.selectionManufacture("BMW");
+     this.selectionManufacture(0);
   }
 
   onSelected(bike: Bike)
@@ -40,12 +100,31 @@ export class BikeListComponent implements OnInit {
     this.alertify.message(bike.id.toString());
   }
 
-  selectionManufacture(man: string){
-      this.bike_service.getBikeManList(man).subscribe((responce:Bike)=>{
+  
+
+  selectionManufacture(index: number){
+      this.selected_item=index;
+      this.bike_service.getBikeManList(this.bike_man_array[index]).subscribe((responce:Bike)=>{
         this.BikeList = responce;
      },error =>{
         this.alertify.error("Сервер не отвечаеть (Не можеть получить список мото-в)");
      });
    };
+
+   ActiveItem(index: number):boolean
+   {
+     if(this.selected_item==index){return true;}
+     return false;
+   }
+
+   selected_city(index: number){
+      this.selected_city_index = index;
+      console.log(index);
+   }
+
+   selected_county(index: number)
+   {
+     this.selected_country_index = index;
+   }
 
 }
