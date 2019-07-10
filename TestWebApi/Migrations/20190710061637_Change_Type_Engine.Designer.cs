@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestWebApi.Models;
 
 namespace TestWebApi.Migrations
 {
     [DbContext(typeof(BAZAContext))]
-    partial class BAZAContextModelSnapshot : ModelSnapshot
+    [Migration("20190710061637_Change_Type_Engine")]
+    partial class Change_Type_Engine
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

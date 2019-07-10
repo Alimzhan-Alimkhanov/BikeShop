@@ -18,11 +18,11 @@ export class BikeListComponent implements OnInit {
 
    BikeList : Bike;
    selected_item: number = 0;
-   selected_city_index = 0;
-   selected_country_index = 0;
-   selected_type_index = 0;
-   selected_capacity_index = 0;
-   selected_manufacture_index = 0;
+   selected_city_index :number = 0;
+   selected_country_index:number = 0;
+   selected_type_index:number = 0;
+   selected_capacity_index:number = 0;
+   selected_manufacture_index:number = 0;
   
    bike_man_array = [
      "BMW",
@@ -82,7 +82,7 @@ export class BikeListComponent implements OnInit {
   ];
 
 
-  manufaсture_array = [
+  manufacture_array = [
     "Любой", 
     "BMW",
      "Harley-Davidson",
@@ -126,5 +126,33 @@ export class BikeListComponent implements OnInit {
    {
      this.selected_country_index = index;
    }
+
+   selected_type(index: number)
+   {
+     this.selected_type_index = index;
+   }
+   
+   selected_capacity(index: number)
+   {
+     this.selected_capacity_index = index;
+   }
+   selected_manufacture(index: number)
+   {
+     this.selected_manufacture_index = index;
+   }
+
+
+
+
+
+
+
+   FindBike()
+   {
+     this.alertify.error("not selected");
+   }
+
+
+
 
 }

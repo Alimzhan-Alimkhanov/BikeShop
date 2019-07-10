@@ -46,10 +46,7 @@ namespace TestWebApi.Controllers
         [HttpGet("GetManBike/{name}")]
         public async Task<IActionResult> GetManBike(string name)
         {
-            var bikes = _dbcontext.Manufactures.Include(m => m.List_Bike).Where(p => p.Name == name);
-
-       
-
+            
             var bs = (from bike in _dbcontext.Bikes
                       where bike.Manufacture.Name == name
                       select bike).ToList();
@@ -62,12 +59,40 @@ namespace TestWebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet("Find")]
-        public string Find(int cost,string city,string country, string  en_cap, string kind, string manufacture)
+        public async Task<IActionResult> Find(int? cost,string city,string country, int?  en_cap, string kind, string manufacture)
         {
-            
+            IEnumerable<Bike> list_bike = null;
 
-            return $"City:{city},Country: {country},En_Cap: {en_cap},Kind: {kind}, Manufacture: {manufacture}";
+
+            if(cost==null && city==null &&  country == null &&  en_cap ==null &&  kind ==null &&  manufacture == null)
+            {
+                return BadRequest("Ничего не выбрано ");
+            }
+
+            list_bike = (from bike in _dbcontext.Bikes
+                         where (bike.Cost >= cost || cost == null )&&
+                         (bike.City.Name == city || city == null ) &&
+                         (bike.Country.Name == country || country==null ) &&
+                         (bike.Engine_Capacity.capacity >= en_cap || en_cap==null )&&
+                         (bike.Kind.Name == kind  || kind == null) &&
+                         (bike.Manufacture.Name == manufacture || manufacture ==null)
+                         select bike).ToList();
+
+
+       
+
+            return Ok(list_bike);
         }
+
+        [AllowAnonymous]
+        [HttpGet("Findx")]
+        public string Findx(int cost, string city)
+        {
+
+
+            return $"City:{city},Cost:{cost}";
+        }
+
 
 
 

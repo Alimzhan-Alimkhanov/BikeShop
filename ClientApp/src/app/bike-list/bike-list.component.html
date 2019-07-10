@@ -6,7 +6,7 @@
             <div class="input-group" >
              <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="Что ищем?" >
              <div class="pl-2 input-group-btn" >
-              <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon" ><i class="fa fa-search fa-fw"></i>Найти</span></button>
+              <button  type="button" class="btn btn-secondary btn-search" (click)="FindBike()"><span class="glyphicon glyphicon-search"  >&nbsp;</span> <span class="label-icon" ><i class="fa fa-search fa-fw"></i>Найти</span></button>
              </div>
             </div>
            </div>
@@ -23,11 +23,10 @@
                 {{ cities_array[selected_city_index]}}
               </button>
               <div class="dropdown-menu" *dropdownMenu>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_city(0)">{{ cities_array[0]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_city(1)">{{ cities_array[1]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_city(2)">{{ cities_array[2]}}</a>
+                  <ng-container *ngFor="let item of cities_array; let i = index;">
+                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_city(i)">{{ cities_array[i]}}</a>
+                <div *ngIf="i!=cities_array.length-1" class="dropdown-divider"></div>
+                 </ng-container>
               </div>
             </div>
 
@@ -37,29 +36,23 @@
                 {{ country_array[selected_country_index]}}
               </button>
               <div class="dropdown-menu" *dropdownMenu>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(0)">{{ country_array[0]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(1)">{{ country_array[1]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(2)">{{ country_array[2]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(3)">{{ country_array[3]}}</a>
+                  <ng-container *ngFor="let item of country_array; let i = index;">
+                   <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(i)">{{ country_array[i]}}</a>
+                   <div *ngIf="i!=country_array.length-1" class="dropdown-divider"></div>
+              </ng-container>
               </div>
             </div>
         
             <div class="pl-3 dropdown" dropdown>
                 <label class="pr-2">Тип:</label>
               <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
-                {{ country_array[selected_country_index]}}
+                {{ type_array[selected_type_index]}}
               </button>
               <div class="dropdown-menu" *dropdownMenu>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(0)">{{ country_array[0]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(1)">{{ country_array[1]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(2)">{{ country_array[2]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(3)">{{ country_array[3]}}</a>
+                  <ng-container *ngFor="let item of type_array; let i = index;">
+                   <a class="dropdown-item" href="#"  onclick="return false;" (click)= "selected_type(i)">{{ type_array[i]}}</a>
+                   <div *ngIf="i!=type_array.length-1" class="dropdown-divider"></div>
+                 </ng-container>
               </div>
             </div>
 
@@ -67,33 +60,24 @@
             <div class="pl-3 dropdown" dropdown>
                 <label class="pr-2">Объем двигеталя:</label>
               <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
-                {{ country_array[selected_country_index]}}
+                {{ capacity_array[selected_capacity_index]}}
               </button>
               <div class="dropdown-menu" *dropdownMenu>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(0)">{{ country_array[0]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(1)">{{ country_array[1]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(2)">{{ country_array[2]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(3)">{{ country_array[3]}}</a>
+                <a *ngFor="let item of capacity_array; let i = index;"  class="dropdown-item" href="#"  onclick="return false;" (click)="selected_capacity(i)">{{ capacity_array[i]}}</a>
               </div>
             </div>
+
 
             <div class="pl-3 dropdown" dropdown>
                 <label class="pr-2">Производитель:</label>
               <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
-                {{ country_array[selected_country_index]}}
+                {{ manufacture_array[selected_manufacture_index]}}
               </button>
               <div class="dropdown-menu" *dropdownMenu>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(0)">{{ country_array[0]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_county(1)">{{ country_array[1]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(2)">{{ country_array[2]}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="return false;" (click)="selected_county(3)">{{ country_array[3]}}</a>
-              </div>
+                <ng-container *ngFor="let item of manufacture_array; let i = index;">
+                    <a class="dropdown-item" href="#"  onclick="return false;" (click)="selected_manufacture(i)">{{manufacture_array[i]}}</a>
+                    <div *ngIf="i!=manufacture_array.length-1" class="dropdown-divider"></div>
+                </ng-container>
             </div>
          
           </div>
