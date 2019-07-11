@@ -19,5 +19,12 @@ namespace TestWebApi.Models
         [Required]
         public string Gender { get; set; }
 
+        [Required]
+        [Range(18,150)]
+        public int Age { get; set; }
+
+        [Required]
+        public string Number { get; set; }
+
     }
 }

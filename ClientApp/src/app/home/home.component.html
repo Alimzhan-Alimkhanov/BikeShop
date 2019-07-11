@@ -3,14 +3,14 @@
   
 
   <div *ngIf="!registerMode" style="text-align: center">
-    <h1>Find your match</h1>
-    <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
+    <h1>Нужно за-я</h1>
+    <p class="lead"></p>
     <div class="text-center">
       <!--
         Add mr-2 for spacing  
       -->
-      <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
-      <button class="btn btn-info btn-lg">Learn more</button>
+      <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Зарегестрироваться</button>
+      <button class="btn btn-info btn-lg">забыл пароль</button>
     </div>
   </div>
 
@@ -29,7 +29,7 @@
             parent component home.component which accepts boolean as a parameter.
         -->
 
-        <app-register [valuesFromHome]="values" (cancelRegister)="cancelRegisterMode($event)" ></app-register>
+        <app-register (cancelRegister)="cancelRegisterMode($event)" ></app-register>
       </div>
     </div>
   </div>

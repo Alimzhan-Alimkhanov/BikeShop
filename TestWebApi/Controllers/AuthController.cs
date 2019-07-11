@@ -47,7 +47,10 @@ namespace TestWebApi.Controllers
             var newUser = new User
             {
                 Name = userRegister.username,
-                Gender = userRegister.Gender
+                Gender = userRegister.Gender,
+                Age = userRegister.Age,
+                Telephone_number = userRegister.Number,
+                Created = DateTime.Now
             };
 
             var createdUser = await _repo.Register(newUser,userRegister.password);

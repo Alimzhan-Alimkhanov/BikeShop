@@ -13,13 +13,13 @@ import { RegisterComponent } from './register/register.component';
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
-import { MemberListComponent } from './member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { BikeListComponent } from './bike-list/bike-list.component';
 import { FooterComponent } from './footer/footer.component';
+import { PostAddComponent } from './post-add/post-add.component';
 
 
 
@@ -31,11 +31,11 @@ import { FooterComponent } from './footer/footer.component';
       NotComponent,
       HomeComponent,
       RegisterComponent,
-      MemberListComponent,
       ListsComponent,
       MessagesComponent,
       BikeListComponent,
-      FooterComponent
+      FooterComponent,
+      PostAddComponent
    ],
    imports: [
       BrowserModule,

@@ -1,7 +1,7 @@
 
   <!-- переменная хранить в себе форму   -->
 <form #registerForm="ngForm" (ngSubmit)="register()" >
-    <h2 class="text-center text-white">Sign Up</h2>
+    <h2 class="text-center text-white">Регистрация</h2>
     <hr>
 
 
@@ -9,24 +9,31 @@
     <!-- required - валидация данных чтоб пользоваться должны создать директиву, в которой переопределить набор стантартных валидаторов  -->
     <!-- есть езще Reactive forms - где все действий проиходить в ts-->
     <div class="form-group">
-        <input type="text" class="form-control" required name="username" [(ngModel)]="model.username" placeholder="Username">
+        <input type="text" class="form-control" required name="username" [(ngModel)]="model.username" placeholder="Логин">
     </div>
 
 
-    <div class="from-group">
-        <label for="favoriteValue">What is you fav values? </label>
-        <select class="form-control" id="favoriteValue">
-            <option *ngFor="let value of valuesFromHome" [value]="value">{{value.name}}</option>
-        </select>
-    </div>
 
     <div class="form-group">
         <input type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Password">
     </div>
 
     <div class="form-group">
-        <input type="text" class="form-control" required name="gender" [(ngModel)]="model.gender" placeholder="Gender">
+        <input type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Подтвердите Pasword">
     </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" required name="gender" [(ngModel)]="model.gender" placeholder="Пол">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" required name="gender" [(ngModel)]="model.Age" placeholder="Возраст">
+    </div>
+
+    <div class="form-group">
+            <input type="text" class="form-control" required name="gender" [(ngModel)]="model.Number" placeholder="Тел номер">
+    </div>
+    
 
     <div class="form-group text-center" >
         <button class="btn btn-success" type="submit">Register</button>

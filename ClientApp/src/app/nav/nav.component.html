@@ -11,7 +11,7 @@
         <a class="nav-link" [routerLink]="['/bikelist']">Мотоциклы</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/members']">Mathches</a>
+        <a class="nav-link" [routerLink]="['/post-add']">Подать объявления</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/lists']">Lists</a>
@@ -25,6 +25,9 @@
       <li class="nav-item active" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/bikelist']">Мотоциклы</a>
       </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/post-add']">Подать объявления</a>
+      </li>
     </ul>
 
     
@@ -35,10 +38,10 @@
         Welcome {{authService.decodeToken.unique_name}}
       </a>
       <div class="dropdown-menu" *dropdownMenu>
-        <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Something Edit</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Профиль</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click)="logout()">
-          <i class="fa fa-sign-out"></i>Logout</a>
+          <i class="fa fa-sign-out"></i>Выйти</a>
       </div>
     </div>
 
@@ -47,7 +50,7 @@
      <!-- есть еще реактивное форма -->
     <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
       <input class="form-control mr-sm-2" type="text" name="username" #username="ngModel"
-      placeholder="Username" required [(ngModel)]="model.username">
+      placeholder="Login" required [(ngModel)]="model.username">
       <input class="form-control mr-sm-2" type="password" name="password" #password="ngModel"
       placeholder="Password" required [(ngModel)]="model.password">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>

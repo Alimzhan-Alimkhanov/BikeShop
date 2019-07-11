@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Bike } from '../_model/Bike';
 import { AlertifyService } from '../_services/alertify.service';
+import { ProfileService } from '../_services/profile.service';
 
 @Component({
   selector: 'app-bike-list',
@@ -13,7 +14,8 @@ import { AlertifyService } from '../_services/alertify.service';
 export class BikeListComponent implements OnInit {
 
   baseUrl = environment.apiUrl + 'bike/GetBike'
-  constructor(private bike_service: BikeService,private http: HttpClient,private alertify: AlertifyService) { }
+  constructor(private bike_service: BikeService,private http: HttpClient,
+    private alertify: AlertifyService,private profile:ProfileService) { }
 
 
    BikeList : Bike;
@@ -23,6 +25,8 @@ export class BikeListComponent implements OnInit {
    selected_type_index:number = 0;
    selected_capacity_index:number = 0;
    selected_manufacture_index:number = 0;
+   cost: number=0;
+   srch: string="";
   
    bike_man_array = [
      "BMW",
@@ -109,6 +113,8 @@ export class BikeListComponent implements OnInit {
      },error =>{
         this.alertify.error("Сервер не отвечаеть (Не можеть получить список мото-в)");
      });
+
+     
    };
 
    ActiveItem(index: number):boolean
@@ -149,10 +155,85 @@ export class BikeListComponent implements OnInit {
 
    FindBike()
    {
-     this.alertify.error("not selected");
+     this.bike_service.getFindBikeList(this.srch,this.cost,this.cities_array_req[this.selected_city_index],
+      this.country_array_req[this.selected_country_index],this.capacity_array_req[this.selected_capacity_index],
+      this.type_array_req[this.selected_type_index],this.manufacture_array_req[this.selected_manufacture_index])
+      .subscribe((responce:Bike)=>{
+           console.log(responce);
+          this.BikeList = responce;
+       },error =>{
+          console.log(error.error);
+          
+          this.alertify.error("Сервер не отвечаеть (Не можеть получить список мото-в)");
+       }
+      );
+
+
+
+     this.profile.getprofile();
+      
    }
 
 
+   cities_array_req = [
+    "",
+   "Astana",
+   "Almaty"
+  ];
+
+  country_array_req = [
+     "",
+   "Germany",
+   "Usa",
+   "China"
+  ];
+
+  type_array_req = [
+    "",
+   "Classic",
+   "SportBike",
+   "Cruiser",
+   "Chopper"
+  ];
+
+
+  capacity_array_req = [
+    0,
+    50,
+   100,
+   150,
+   200,
+   250,
+   300,
+   350,
+   400,
+   450,
+   500,
+   550,
+   600,
+   650,
+   700,
+   750,
+   800,
+   850,
+   900,
+   950,
+   1000,
+   1050,
+   1100,
+   1150,
+   1200,
+   1200
+  ];
+
+
+  manufacture_array_req = [
+    "", 
+    "BMW",
+     "Harley-Davidson",
+     "Kawasaki"
+  ];
 
 
 }
+
