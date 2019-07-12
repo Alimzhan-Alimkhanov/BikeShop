@@ -1,0 +1,56 @@
+<div class="pt-5 container">
+
+  <div class="card">
+      <div class="card-body">
+          <div class="row">
+              <div class="pb-4 col-md-12 d-flex justify-content-center">
+                  <img class="card-img-top" id="cusom_bike_img" src="https://localhost:5001/Bike_Images/BMW-K-1300-S.jpg" alt="">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <form>
+                        <div class="form-group row">
+                          <label for="username" class="col-4 col-form-label">Логин</label> 
+                          <div *ngIf="User" class="col-8">
+                            <input id="username" name="username" 
+                            class="form-control here" required="required" type="text" value="{{User.name}}">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="role" class="col-4 col-form-label">Пол</label> 
+                            <div class="col-8">
+                              <select id="gender" name="gender" class="custom-select">
+                                <option value="man">Муж</option>
+                                <option value="girl">Жен</option>
+                              </select>
+                            </div>
+                          </div>
+
+                        <div class="form-group row">
+                          <label for="name" class="col-4 col-form-label">Возраст</label> 
+                          <div class="col-8">
+                            <input id="age" name="name"  class="form-control here" type="number" value="{{User.age}}" >
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="lastname" class="col-4 col-form-label">Номер телефона</label> 
+                          <div class="col-8">
+                            <input id="lastname" name="lastname"  class="form-control here" type="text" value="{{User.telephone_number}}">
+                          </div>
+                        </div>
+                       
+                        <div class="form-group row">
+                          <div class="col d-flex justify-content-center">
+                            <button name="submit" type="submit" class="btn btn-primary" (click)="click()">Сохранить</button>
+                          </div>
+                        </div>
+                      </form>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+
+</div>

@@ -92,16 +92,8 @@ namespace TestWebApi.Controllers
             //var token = tokenHandler.CreateToken(tokenDescriptor);
             var token = tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
 
-            //var response = new
-            //{
-            //    access_token = token,
-            //    username = user.Name
-            //};
-
-
-            ////tokenHandler.WriteToken(token);
-            //Response.ContentType = "application/json";
-            //await Response.WriteAsync(JsonConvert.SerializeObject(response, new JsonSerializerSettings { Formatting = Formatting.Indented }));
+            
+     
 
 
 

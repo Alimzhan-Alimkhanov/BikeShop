@@ -15,7 +15,7 @@ export class BikeListComponent implements OnInit {
 
   baseUrl = environment.apiUrl + 'bike/GetBike'
   constructor(private bike_service: BikeService,private http: HttpClient,
-    private alertify: AlertifyService,private profile:ProfileService) { }
+    private alertify: AlertifyService) { }
 
 
    BikeList : Bike;
@@ -170,7 +170,6 @@ export class BikeListComponent implements OnInit {
 
 
 
-     this.profile.getprofile();
       
    }
 

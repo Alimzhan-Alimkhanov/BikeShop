@@ -14,7 +14,7 @@ namespace TestWebApi.Models
         }
         public DbSet<User> Users { get; set; }
 
-        public DbSet<User_Photo> User_Photos { get; set; }
+        public DbSet<User_Photo> User_Photo { get; set; }
 
         public DbSet<Bike> Bikes { get; set; }
 

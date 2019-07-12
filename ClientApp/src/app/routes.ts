@@ -6,6 +6,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { BikeListComponent } from './bike-list/bike-list.component';
 import { PostAddComponent } from './post-add/post-add.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const appRoutes: Routes = [
     {path: '' , component:BikeListComponent },
@@ -15,6 +16,7 @@ export const appRoutes: Routes = [
         canActivate: [AuthGuard],//CanActive когда переход на , CanDeactive - когда уход с 
         children: [
             {path: 'post-add' , component: PostAddComponent},
+            {path: 'profile' , component: ProfileComponent},
             {path: 'messages' , component: MessagesComponent},
             {path: 'lists' , component: ListsComponent}  
         ]

@@ -20,6 +20,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { BikeListComponent } from './bike-list/bike-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostAddComponent } from './post-add/post-add.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -35,7 +36,8 @@ import { PostAddComponent } from './post-add/post-add.component';
       MessagesComponent,
       BikeListComponent,
       FooterComponent,
-      PostAddComponent
+      PostAddComponent,
+      ProfileComponent
    ],
    imports: [
       BrowserModule,
