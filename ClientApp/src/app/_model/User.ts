@@ -1,13 +1,13 @@
-export interface User {
-    id: number;
+export class User {
         name: string;
-        passwordHash: string;
-        passwordSalt: string;
-        created: Date;
-        lastActive: Date;
         gender: string;
         age: number;
         telephone_number: string;
-        user_Photo?: any;
-        user_List_Bike?: any;
+
+        constructor(name: string, gender: string,age:number,telephone_number:string) {
+          this.name = name;
+          this.gender = gender;
+          this.age = age;
+          this.telephone_number = telephone_number;
+        }
 }

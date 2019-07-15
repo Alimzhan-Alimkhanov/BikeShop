@@ -7,6 +7,7 @@ import { BikeListComponent } from './bike-list/bike-list.component';
 import { PostAddComponent } from './post-add/post-add.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import { User_postComponent } from './user_post/user_post.component';
 
 export const appRoutes: Routes = [
     {path: '' , component:BikeListComponent },
@@ -17,8 +18,7 @@ export const appRoutes: Routes = [
         children: [
             {path: 'post-add' , component: PostAddComponent},
             {path: 'profile' , component: ProfileComponent},
-            {path: 'messages' , component: MessagesComponent},
-            {path: 'lists' , component: ListsComponent}  
+            {path: 'userpost' , component: User_postComponent}
         ]
     },
     {path:'home',component:HomeComponent},

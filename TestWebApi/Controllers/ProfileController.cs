@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
@@ -22,10 +24,12 @@ namespace TestWebApi.Controllers
     {
 
         private readonly BAZAContext _dbcontext;
+        private readonly IHostingEnvironment _appEnvironment;
 
 
-        public ProfileController(BAZAContext context) {
+        public ProfileController(BAZAContext context, IHostingEnvironment appEnvironment) {
             _dbcontext = context;
+            _appEnvironment = appEnvironment;
         }
 
 
@@ -79,6 +83,26 @@ namespace TestWebApi.Controllers
               
             return Ok(current_user_photo);
         }
+
+
+        [HttpPost("PostUserPhoto")]
+        public async Task<IActionResult> PostUserPhoto(IFormFile photo)
+        {
+            if(photo != null)
+            {
+                string path = "/User_Photos/" + photo.FileName;
+
+                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                {
+                    await photo.CopyToAsync(fileStream);
+                }
+
+            }
+
+
+            return Ok("ok");
+        }
+
 
 
 

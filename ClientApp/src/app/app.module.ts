@@ -13,7 +13,6 @@ import { RegisterComponent } from './register/register.component';
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
-import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
@@ -21,6 +20,7 @@ import { BikeListComponent } from './bike-list/bike-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostAddComponent } from './post-add/post-add.component';
 import { ProfileComponent } from './profile/profile.component';
+import { User_postComponent } from './user_post/user_post.component';
 
 
 
@@ -32,12 +32,12 @@ import { ProfileComponent } from './profile/profile.component';
       NotComponent,
       HomeComponent,
       RegisterComponent,
-      ListsComponent,
       MessagesComponent,
       BikeListComponent,
       FooterComponent,
       PostAddComponent,
-      ProfileComponent
+      ProfileComponent,
+      User_postComponent
    ],
    imports: [
       BrowserModule,
